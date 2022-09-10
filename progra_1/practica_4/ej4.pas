@@ -1,7 +1,7 @@
 { NOTAS: }
 { - el ejercicio no pide el uso de modulos }
 { - no use reales porque el compilador no me deja, pero variables como }
-{   precioPromedioMermeladas tiene que ser real }
+{   precioPromedioMermeladas tienen que ser real }
 program practica4_ej4;
 const 
   CORTE = 9999;
@@ -41,7 +41,7 @@ begin
   { leerProducto leeria todo un producto sin necesidad }
   writeln('Codigo:');
   readln(productoPrincipal.codigo);
-  while (productoPrincipal.codigo <> 9999) do
+  while (productoPrincipal.codigo <> CORTE) do
   begin
     leerProducto(productoPrincipal);
     if (productoPrincipal.tipo = 1) then
