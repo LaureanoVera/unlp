@@ -1,43 +1,43 @@
 class Square {
-  constructor(size = 10) {
-    this.size = size;
+  constructor(side = 10) {
+    this.side = side;
   }
 
   get perimeter() {
-    return `${this.calcPerimeter(this.size)}cm`;
+    return `${this.calcPerimeter(this.side)}cm`;
   }
 
   get area() {
-    return `${this.calcArea(this.size)}cm2`;
+    return `${this.calcArea(this.side)}cm2`;
   }
 
-  calcPerimeter(size) {
-    return size * 4;
+  calcPerimeter(side) {
+    return side * 4;
   }
 
-  calcArea(size) {
-    return size * size;
+  calcArea(side) {
+    return side * side;
   }
 }
 
 class Triangle {
-  constructor(base, height, size2, size3) {
+  constructor(base, height, side2, side3) {
     this.base = base;
     this.height = height;
-    this.size2 = size2;
-    this.size3 = size3;
+    this.side2 = side2;
+    this.side3 = side3;
   }
 
   get perimeter() {
-    return `${this.calcPerimeter(this.base, this.size2, this.size3)}cm`;
+    return `${this.calcPerimeter(this.base, this.side2, this.side3)}cm`;
   }
 
   get area() {
     return `${this.calcArea(this.base, this.height)}cm2`;
   }
 
-  calcPerimeter(size, size2, size3) {
-    return size + size2 + size3;
+  calcPerimeter(side, side2, side3) {
+    return side + side2 + side3;
   }
 
   calcArea(base, height) {
