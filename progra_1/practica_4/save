@@ -1,0 +1,58 @@
+program vectoresPractica;
+const
+  LIMITE = 3;
+type
+  vector = array [1..LIMITE] of integer;
+  tipoPorcentajes = record
+    negativo: integer;
+    positivo: integer;
+  end;
+procedure cargar(var arr: vector; cantidad: integer);
+var
+  i: integer;
+begin
+  for i := 1 to cantidad do
+  begin
+    writeln('Leer Nº', i);
+    read(arr[i]);
+  end;
+end;
+function promedio(arr: vector; cant: integer): real;
+var
+  i : integer;
+  aux: integer;
+begin
+  aux := 0; 
+  for i := 1 to cant do
+    aux := aux + arr[i];
+  promedio := aux / cant;
+end;
+function calcularPorcentaje50(num: integer): integer;
+begin
+  calcularPorcentaje50 := num * 2;
+end;
+function calcularPorcentajes(arr: vector; cant: integer): tipoPorcentajes;
+var
+  i: integer;
+  aux: tipoPorcentajes;
+begin
+  for i := 1 to cant do
+  begin
+    if (arr[i] < 0) then
+      negativos := negativos + 1;
+    else
+      positivos := positivos + 1;
+  end;
+  aux.negativo := calcularPorcentaje50(negativos);
+  aux.positivo := calcularPorcentaje50(positivos);
+  calcularPorcentajes := aux;
+end;
+var
+  vectorPrincipal: vector;
+  dimensionLogica: integer;
+  i: integer;
+  promedioPrincipal: real;
+begin
+  cargar(vectorPrincipal, LIMITE);
+  promedioPrincipal := promedio(vectorPrincipal, LIMITE);
+end.
